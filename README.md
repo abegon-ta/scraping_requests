@@ -34,4 +34,20 @@
 ここに追加のコメント、特別な要望、またはプロジェクトに関連するその他の情報を提供してください。
 
 # 実行方法
-後々更新します
+まずはこのrepositoryをcloneしてください
+## scrapyを既に使用できる環境を持っている場合
+```
+cd scraping_request/scraping_requests/scraping_requests/spiders
+scrapy crawl {spider file} -o {output_file_name}.{自分の希望の拡張子(csv,json etc...)}
+```
+
+## scrapyの環境がない場合
+今回場合pipenv使用し環境を作成できるようにしています。
+```
+cd scraping_request
+pip install pipenv
+pipenv sync
+pipenv shell
+cd scraping_requests/scraping_requests/spiders
+scrapy crawl {spider file} -o {output_file_name}.{希望の拡張子}
+```
