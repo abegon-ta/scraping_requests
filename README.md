@@ -45,7 +45,7 @@ scrapy crawl {spider file} -o {output_file_name}.{自分の希望の拡張子(cs
 今回の場合pipenv使用し環境を作成できるようにしています。
 ```
 cd scraping_request
-pip install pipenv
+pip install pipenv --installしたことがない場合
 pipenv sync
 pipenv shell
 cd scraping_requests/scraping_requests/spiders
