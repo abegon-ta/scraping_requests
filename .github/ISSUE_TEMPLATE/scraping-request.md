@@ -2,7 +2,7 @@
 name: scraping request
 about: scrapingのリクエスト時に使用するtemplate
 title: ''
-labels: ''
+labels: request
 assignees: abegon-ta
 
 ---
