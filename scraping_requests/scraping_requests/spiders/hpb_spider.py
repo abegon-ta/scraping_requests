@@ -38,6 +38,8 @@ class HpbSpiderSpider(CrawlSpider):
             tel = res_for_tel.xpath('//th[text()="電話番号  "]/following-sibling::td/text()')
             if tel:
                 tel = re.sub('\s', '', tel[0])
+        else:
+            tel = None
 
         number_of_seats = response.xpath('//th[text()="席数"]/following-sibling::td/text()').get()
         if number_of_seats:
