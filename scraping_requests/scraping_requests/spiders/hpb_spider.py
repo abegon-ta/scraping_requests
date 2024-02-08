@@ -40,7 +40,10 @@ class HpbSpiderSpider(CrawlSpider):
                 tel = re.sub('\s', '', tel[0])
         else:
             tel = None
-
+        business_hours = response.xpath('//th[text()="営業時間"]/following-sibling::td/text()').get()
+        regular_holiday = response.xpath('//th[text()="定休日"]/following-sibling::td/text()').get()
+        salon_hp = response.xpath('//th[text()="お店のホームページ"]/following-sibling::td/a/@href').get()
+        stylists_link = response.xpath('//p/a[contains(text(),"スタイリスト")]/@href').get()
         number_of_seats = response.xpath('//th[text()="席数"]/following-sibling::td/text()').get()
         if number_of_seats:
             number_of_seats = re.sub('\s', '', number_of_seats)
@@ -55,6 +58,10 @@ class HpbSpiderSpider(CrawlSpider):
             "salon_url" : salon_url,
             "address" : address,
             "tel" : tel,
+            "business_hours" : business_hours,
+            "regular_holiday" : regular_holiday,
+            "salon_hp" : salon_hp,
+            "stylists_link" : stylists_link,
             "number_of_seats" : number_of_seats,
             "stylists" : stylists
         }
