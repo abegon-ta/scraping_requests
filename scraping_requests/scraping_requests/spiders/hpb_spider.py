@@ -42,7 +42,7 @@ class HpbSpiderSpider(CrawlSpider):
             tel = None
         business_hours = response.xpath('//th[text()="営業時間"]/following-sibling::td/text()').get()
         regular_holiday = response.xpath('//th[text()="定休日"]/following-sibling::td/text()').get()
-        salon_hp = response.xpath('//th[text()="お店のホームページ"]/following-sibling::td/a/@href').get()
+        salon_hp = response.xpath('//th[text()="お店のホームページ"]/following-sibling::td/a/text()').get()
         stylists_link = response.xpath('//p/a[contains(text(),"スタイリスト")]/@href').get()
         number_of_seats = response.xpath('//th[text()="席数"]/following-sibling::td/text()').get()
         if number_of_seats:
